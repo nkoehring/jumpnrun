@@ -9,6 +9,13 @@ module.exports = function(grunt) {
         dest: 'build',
         expand: true
       },
+
+      libs: {
+        cwd: 'lib',
+        src: [ '*.js' ],
+        dest: 'build/lib',
+        expand: true
+      },
     },
 
     clean: {
@@ -33,7 +40,8 @@ module.exports = function(grunt) {
     uglify: {
       build: {
         options: {
-          mangle: false
+          mangle: false,
+          beautify: true
         },
         files: {
           'build/jumpnrun.js': [ 'build/**/*.js' ]
