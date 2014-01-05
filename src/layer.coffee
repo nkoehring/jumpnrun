@@ -1,10 +1,9 @@
-window.JnR ||= {}
+window.JnR = {} unless window.JnR
 class window.JnR.Layer
+
   constructor: (@name, @root=document.body, @width=800, @height=600, prepend=false)->
     unless @name
       @name = "layer#{document.getElementsByTagName('canvas').length}"
-
-    console.log "creating layer #{@name}"
 
     @canvas = document.createElement("canvas")
     @canvas.width = @w = @width

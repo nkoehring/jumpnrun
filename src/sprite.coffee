@@ -1,15 +1,10 @@
-window.JnR ||= {}
+window.JnR = {} unless window.JnR
 class window.JnR.Sprite
-  ready: false
 
-  constructor: (@name, @width, @height)->
+  constructor: (@name, @width, @height, @cb)->
     @image = new Image()
-    @image.onload = ->
-      @ready = true
+    @image.onload = @cb
 
-  load: (@url, size)->
-    @image = new Image()
+  load: (@url, @width, @height)->
     @image.src = @url
-    @width = size.a
-    @height = size.b
 

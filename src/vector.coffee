@@ -1,5 +1,6 @@
-window.JnR ||= {}
+window.JnR = {} unless window.JnR
 class window.JnR.Vector
+
   constructor: (@a, @b, @c, @d)->
     @length = arguments.length
 
